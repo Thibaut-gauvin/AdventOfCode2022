@@ -18,5 +18,8 @@ qa: lint test ## Run all QA process
 lint: ## Lint source code
 	golangci-lint run -v
 
+lint.fix: ## Lint and fix source code
+	golangci-lint run --fix -v
+
 test: ## Run tests
-	go test -race -v ./...
+	go test -race -v ./... -coverprofile coverage.output
