@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strconv"
 )
 
 func LoadPuzzleInput(filePath string) []string {
@@ -23,4 +24,12 @@ func LoadPuzzleInput(filePath string) []string {
 	_ = file.Close()
 
 	return lines
+}
+
+func StrToInt(val string) int {
+	value, err := strconv.Atoi(val)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return value
 }
